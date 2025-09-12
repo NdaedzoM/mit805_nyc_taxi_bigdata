@@ -1,4 +1,4 @@
-# Download NYC Taxi Yellow Trip Data 2023–2025
+# Download NYC Taxi Yellow Trip Data 2009–2025
 import os
 import requests
 from tqdm import tqdm
@@ -11,7 +11,7 @@ data_dir = "../data/nyc_taxi"
 os.makedirs(data_dir, exist_ok=True)
 
 # Years and months
-years = list(range(2009, 2022))
+years = list(range(2009, 2026))
 
 # Maximum number of parallel downloads
 MAX_WORKERS = 4  # Increase if internet is fast
