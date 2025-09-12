@@ -3,17 +3,28 @@
 This project downloads, processes, and analyzes the **NYC Yellow Taxi Trip Data** (2009–2025) using Python and PySpark.  
 
 ---
+## Dataset
+- **Source:** [NYC TLC Trip Records](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+- **Years Covered:** 2009 – 2025
+- **Format:** Parquet files
+- **Size:** ~29 GB (199 files)
 
-## Project Overview
-
-- **Data Source:** NYC Taxi and Limousine Commission (TLC)  
-- **Format:** Parquet files  
-- **Purpose:**  
-  - Explore schema evolution across three periods  
-  - Count monthly trips  
-  - Compare schemas and datatypes  
-  - Prepare data for visualization  
-  - Extract insights for business and urban planning  
+## Project Workflow
+1. **Data Download**
+   - Downloaded Parquet files using Python scripts with parallelized requests.
+2. **Data Processing**
+   - Used **PySpark** in Google Colab to inspect schemas, sample data, and compute monthly trip counts.
+   - Applied schema harmonization across three schema periods (2009–2016, 2017–2020, 2021–2025).
+3. **Analysis**
+   - Explored the dataset using the **7 Vs of Big Data** (Volume, Velocity, Variety, Value, Veracity, Variability, Visualization).
+   - Generated insights for business and city planning.
+4. **Visualizations**
+   - Created **line charts** showing monthly trip counts.
+   - Schema comparison tables and sample data previews.
+5. **Future Steps**
+   - Process data using **Hadoop MapReduce**.
+   - Perform further analyses such as **correlations, clustering, and predictions**.
+   - Develop **additional visualizations** and interpret results technically and in business terms.
 
 ---
 ## Environment
@@ -25,44 +36,11 @@ This project downloads, processes, and analyzes the **NYC Yellow Taxi Trip Data*
   - requests  
   - tqdm  
   - glob, os, json  
+  - Hadoop
+  - Matplotlib / Chart.js for visualizations
   
 ---
 
-## Steps
-
-1. **Download Data**  
-   Downloads monthly taxi trip data in parallel using `requests` and `ThreadPoolExecutor`.
-
-2. **Initialize PySpark**  
-   Set up Spark session to read and process large Parquet files.
-
-3. **Verify Files**  
-   Check all downloaded files and compute total size.
-
-4. **Schema Selection**  
-   Select representative files for:
-   - Schema 1 (2009–2016)  
-   - Schema 2 (2016–2020)  
-   - Schema 3 (2021–2025)
-
-5. **Schema Analysis**  
-   - Read Parquet files  
-   - Print schemas and sample rows  
-   - Count trips by year and month  
-
-6. **Schema Comparison**  
-   Compare columns and datatypes across schema periods.
-
-7. **Visualization**  
-   Prepare data for line charts showing monthly trip counts.  
-   Plan to create at least 2–3 visualizations (graphs, charts, dashboards) to reveal trends, correlations, or clusters.
-
-8. **Data Processing & Analysis Goals**  
-   - Process dataset using Hadoop (MapReduce) or Spark  
-   - Extract meaningful information (correlations, clustering, predictions)  
-   - Interpret results both technically and in terms of business value  
-
----
 
 ## Requirements
 
